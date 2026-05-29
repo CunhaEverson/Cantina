@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/main.css">
-    <title>Feeding Unicap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Fraga Doces & Salgados</title>
 </head>
 
 <body onLoad="slide1()">
@@ -16,14 +17,14 @@
         <nav>
             <div class="container">
                 <a href="index.html" class="logo">
-                    <h1>Feeding Unicap</h1>
+                    <h1>Fraga's Doces & Salgados</h1>
                 </a>
                 <div class="menu">
-                    <ul>
+                    <!--<ul>
                         <li>
                             <a href="sobre.html">SOBRE</a>
                         </li>
-                    </ul>
+                    </ul>-->
                 </div>
             </div>
         </nav>
@@ -46,25 +47,27 @@
             <form class="modal form" id="form-product">
                 <div class="form-group">
                     <label for="title">Prato</label>
-                    <input type="text" name="title" id="title" class="form-control" placeholder="Ex. Prato 1" required="required">
+                    <input type="text" name="title" id="title" class="form-control" placeholder="Ex: Prato 1" required="required">
                 </div>
                 <div class="form-grupo">
                     <label for="quantity">Quantidade</label>
-                    <input type="number" name="quantity" id="quantity" class="form-control" placeholder="Ex.1" required="required" min="1">
+                    <input type="number" name="quantity" id="quantity" class="form-control" placeholder="Ex: 1" required="required" min="1">
                 </div>
                 <div class="form-group">
                     <label for="name">Seu nome</label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Ex. Everson" required="required">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Ex: Maria" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="address">Localidade/Endereço</label>
-                    <input type="text" name="address" id="address" class="form-control" placeholder="Ex. R. do Príncipe, 526 - Boa Vista, Recife - PE" required="required">
+                    <label for="address">Localidade(setor)/Endereço</label>
+                    <input type="text" name="address" id="address" class="form-control" placeholder="Ex: R. do Príncipe, 526 - Boa Vista, Recife - PE" required="required">
                 </div>
                 <div class="form-group">
                     <label for="payment">Pagamento</label>
                     <select name="payment" id="payment" class="form-control" required="required">
                         <option value="dinheiro">Dinheiro</option>
-                        <option value="cartao">Cartão de crédito</option>
+                        <option value="PIX">PIX</option>
+                        <option value="Cartão no débito">Cartão no débito</option>
+                        <option value="Cartão de crédito">Cartão de crédito</option>
                     </select>
                 </div>
                 <div class="btn-group">
@@ -74,9 +77,65 @@
             </form>
         </div>
     </main>
-    <footer>
+    <footer  class="footer-main">
         <div class="container">
-            <p>Desenvolvido pelo aluno da Unicap, Everson Cunha.</p>
+            <div class="footer-main-top">
+                <section class="footer-main-top-section">
+                    <h1 class="footer-main-top-section-title">Fale Conosco</h1>
+                <div itemscope="" itemtype="https://schema.org/Place">
+                    <div itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress">
+                        <div class="footer-main-top-section-item">
+                            Fraga's Doces & Salgados
+                        </div>
+                        <!--<div class="footer-main-top-section-item">
+                            CNPJ 00.000.000/0001-00
+                        </div>-->
+                        <div itemprop="streetAddress" class="footer-main-top-section-item">
+                            Rua Coronel Mizael de Mendonça, 62
+                        </div>
+                        <div class="footer-main-top-section-item">
+                            San Martin
+                        </div>
+                        <div class="footer-main-top-section-item">
+                            CEP <span itemprop="postalCode">50761-182</span>
+                        </div>
+                        <div class="footer-main-top-section-item">
+                            <span itemprop="addressLocality">Recife</span> - <span itemprop="addressRegion">PE</span>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <ul class="footer-main-top-section-social" itemscope="" itemtype="https://schema.org/Organization">
+                <li>
+                    <a href="" class="" target="_blank"
+                        title="Instagram" itemprop="sameAs" style="font-size:24px;color:purple">
+                        <span class="fa fa-instagram"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="" target="_blank" title="Facebook"
+                        itemprop="sameAs">
+                        <span class="fa fa-facebook-f"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="" target="_blank" title="Youtube"
+                        itemprop="sameAs" style="font-size:24px;color:red">
+                        <span class="fa fa-youtube-play"></span>
+                    </a>
+                </li>
+                <!--<li>
+                    <a href="" class="" target="_blank" title="Twitter"
+                        itemprop="sameAs">
+                        <span class="icon-twitter2"></span>
+                    </a>
+                </li>-->
+            </ul>
+        </section>
+            </div>
+        </div>
+        <div class="container">
+            <p>Copyright © - Todos os Direitos Reservados.</p>
         </div>
     </footer>
     <script src="javascript/produtos.js"></script>

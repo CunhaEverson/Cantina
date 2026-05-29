@@ -134,6 +134,7 @@ main .container .pratos{
 }
 
 footer{
+    font-size: 10px;
     padding: 10px 0px;
 }
 footer .container p{
@@ -232,4 +233,95 @@ footer .container p{
 /*Estilização do propaganda do Ifood*/
 #id{
     width: 100%;
+}
+/*** Area Fale Conosco *****/
+.footer-main-top-section{
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 950px) {
+    .footer-main-top > * + * {
+        margin-top: 60px;
+    }
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+*{
+    box-sizing: border-box;
+}
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+.footer-main {
+    background-color: #f0eff8;
+    color: #000;
+    padding-bottom: 45px;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.icon-instagram2:before {
+    content: "\e902";
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon-site' !important;
+    speak-as: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.footer-main-top-section-social a {
+    display: block;
+    font-size: 22px;
+    color: #111;
+    margin-right: 15px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+}
+li {
+    text-align: -webkit-match-parent;
+}
+.footer-main-top-section-social {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    list-style: outside none;
+    padding: 0;
+}
+ul {
+    list-style-type: disc;
+}
+.footer-main-top-section {
+    font-size: 14px;
+}
+.icon-facebook2:before {
+    content: "\e901";
+}
+.icon-youtube2:before {
+    content: "\e905";
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon-site' !important;
+    speak-as: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

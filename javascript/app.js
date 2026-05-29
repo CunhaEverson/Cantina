@@ -27,7 +27,7 @@ const modalFunc = (productId) => {
     modal.classList.contains('hide') == true ? modal.classList.remove('hide') : modal.classList.add('hide')
 
 }
-const whatsappLinkGenerator = (phoneNumber, productTitle, productQuantity, buyerName, buyerAddress, buyerPayment) => `https://api.whatsapp.com/send?phone=${phoneNumber}&text=Olá eu quero: ${productQuantity} ${productTitle} - Entregar para ${buyerName} - no endereço: ${buyerAddress} - A forma de pagamento será: ${buyerPayment}`
+const whatsappLinkGenerator = (phoneNumber, productTitle, productQuantity, buyerName, buyerAddress, buyerPayment) => `https://api.whatsapp.com/send?phone=${phoneNumber}&text=Olá, eu quero: ${productQuantity} ${productTitle} - Entregar para ${buyerName} - no endereço/local(setor): ${buyerAddress} - A forma de pagamento será: ${buyerPayment}`
 
 const checkout = phoneNumber => {
     const form = document.querySelector('#form-product')
@@ -42,7 +42,7 @@ const checkout = phoneNumber => {
         const buyerPayment = form.querySelector('select#payment').value
 
         const whatsappUrl = whatsappLinkGenerator(phoneNumber, productTitle, productQuantity, buyerName, buyerAddress, buyerPayment)
-        window.location.href = whatsappUrl
+        window.open (whatsappUrl);
     })
 }
 /* função java para busca de pratos*/
@@ -82,5 +82,5 @@ const loadSearch = (form, productsDivId) => {
 }
 
 loadProducts(produtos, '#product-div')
-checkout('558197915239')
+checkout('558195327216')
 loadSearch(document.querySelector('#formSearch'), '#product-div')
