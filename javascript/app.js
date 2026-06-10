@@ -1,24 +1,30 @@
 
 const loadProducts = (produtos, idDivParent) => {
     const parentDiv = document.querySelector(idDivParent)
+
+    parentDiv.innerHTML = ''
+
     produtos.forEach(produto => {
 
         const esgotado = produto.estoque === 0
 
-
         const html = `
-            <article class="prato">
+            <article class="prato ${esgotado ? 'esgotado' : ''}">
+                ${esgotado ? '<span class="tag">ESGOTADO</span>' : ''}
                 <img src="${produto.image}" alt="${produto.title}">
                 <h4>${produto.title}</h4>
                 <h4>R$: ${produto.value.toFixed(2)}</h4>
                 <p>${produto.description}</p>
-                <p>Estoque: ${produto.estoque}</p>
-                <button type="button" onclick="modalFunc(${produto.id})"
-                ${esgotado ? 'disabled' : ''}
+                <button 
+                    type="button" 
+                    onclick="modalFunc(${produto.id})"
+                    ${esgotado ? 'disabled' : ''}
                 >
                     ${esgotado ? 'Indisponível' : 'Quero este prato'}
+                </button>
             </article>
         `
+
         parentDiv.insertAdjacentHTML('beforeend', html)
     })
 }
@@ -77,48 +83,35 @@ const checkout = phoneNumber => {
     })
 }
 /* função java para busca de pratos*/
-const search = (products, searchTerm) => products.filter(product => product.title.includes(`${searchTerm}`) || product.description.includes(`${searchTerm}`))
+const search = (products, searchTerm) => {
+    return products.filter(product =>
+        product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+}
 
 const loadSearch = (form, productsDivId) => {
+
     const productsDiv = document.querySelector(productsDivId)
     const inputSearch = form.querySelector('#inputSearch')
 
-
     form.addEventListener('submit', (e) => {
         e.preventDefault()
-        if (inputSearch.value != '') {
-            productsDiv.querySelectorAll('.prato').forEach(prato => {
-                prato.remove()
-            })
+
+        if (inputSearch.value.trim() !== '') {
+
+            productsDiv.innerHTML = ''
 
             const results = search(produtos, inputSearch.value)
 
-            results.forEach(produto => {
+            if (results.length === 0) {
+                productsDiv.innerHTML = '<p>Nenhum prato encontrado.</p>'
+                return
+            }
 
-                const esgotado = produto.estoque === 0
-                
-                const html = `
-                    <article class="prato ${esgotado ? 'esgotado' : ''}">
-                        ${esgotado ? '<span class="tag">ESGOTADO</span>' : ''}
-                        <img src="${produto.image}" alt="${produto.title}">
-                        <h4>${produto.title}</h4>
-                        <h4>R$: ${produto.value.toFixed(2)}</h4>
-                        <p>${produto.description}</p>
-                        <button 
-                            type="button" 
-                            onclick="modalFunc(${produto.id})"
-                            ${esgotado ? 'disabled' : ''}
-                        >
-                            ${esgotado ? 'Indisponível' : 'Quero este prato'}
-                        </button>
-                    </article>
-                `
-                productsDiv.insertAdjacentHTML('beforeend', html)
-            })
-
+            loadProducts(results, productsDivId)
         }
     })
-
 }
 
 loadProducts(produtos, '#product-div')
