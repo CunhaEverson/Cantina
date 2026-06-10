@@ -2,8 +2,8 @@ const produtos = [
     {
         id: 1,
         image: 'Img/exemplo1.png',
-        title: 'Pão de Frango',
-        description: 'Pão artesanal com recheio de frango e orégano.',
+        title: 'Pão Recheado',
+        description: 'Pão com recheio de frango, requijão e orégano.',
         value: 'R$:\n' + 8.00
     },
     {
@@ -15,16 +15,16 @@ const produtos = [
     },
     {
         id: 3,
-        image: 'Img/exemplo3.jpg',
-        title: 'Doces',
-        description: 'Brigadeiro, Beijinho, Doce de leite e Surpresa de uva.',
+        image: 'Img/IMG-20260609-WA0032.jpg',
+        title: 'Kit com 4 Doces',
+        description: 'Sabores: Brigadeiro, Beijinho, Doce de leite, Churros ou Surpresa de uva.',
         value: 'R$:\n' + 12.00
     },
     {
         id: 4,
-        image: 'Img/exemplo4.jpg',
+        image: 'Img/20260609_093211.jpg',
         title: 'Coxinha',
-        description: 'de Frango e Charque.',
+        description: 'Sabores: Frango e Charque.',
         value: 'R$:\n' + 6.00
     },
 
