@@ -3,13 +3,20 @@ const loadProducts = (produtos, idDivParent) => {
     const parentDiv = document.querySelector(idDivParent)
     produtos.forEach(produto => {
 
+        const esgotado = produto.estoque === 0
+
+
         const html = `
             <article class="prato">
                 <img src="${produto.image}" alt="${produto.title}">
                 <h4>${produto.title}</h4>
-                <h4>${produto.value}</h4>
+                <h4>R$: ${produto.value.toFixed(2)}</h4>
                 <p>${produto.description}</p>
-                <button type="button" onclick="modalFunc(${produto.id})">Quero este prato</button>
+                <p>Estoque: ${produto.estoque}</p>
+                <button type="button" onclick="modalFunc(${produto.id})"
+                ${esgotado ? 'disabled' : ''}
+                >
+                    ${esgotado ? 'Indisponível' : 'Quero este prato'}
             </article>
         `
         parentDiv.insertAdjacentHTML('beforeend', html)
@@ -35,14 +42,38 @@ const checkout = phoneNumber => {
     form.addEventListener('submit', e => {
         e.preventDefault()
 
-        const productTitle = form.querySelector('input#title').value
-        const productQuantity = form.querySelector('input#quantity').value
-        const buyerName = form.querySelector('input#name').value
-        const buyerAddress = form.querySelector('input#address').value
-        const buyerPayment = form.querySelector('select#payment').value
+        const productTitle = form.querySelector('#title').value
+        const productQuantity = parseInt(form.querySelector('#quantity').value)
+        const buyerName = form.querySelector('#name').value
+        const buyerAddress = form.querySelector('#address').value
+        const buyerPayment = form.querySelector('#payment').value
 
-        const whatsappUrl = whatsappLinkGenerator(phoneNumber, productTitle, productQuantity, buyerName, buyerAddress, buyerPayment)
-        window.open (whatsappUrl);
+        const produto = produtos.find(p => p.title === productTitle)
+
+        if (produto.estoque < productQuantity) {
+            alert('Quantidade indisponível em estoque!')
+            return
+        }
+
+        // 🔥 Diminui estoque
+        produto.estoque -= productQuantity
+
+        // Atualiza visual
+        loadProducts(produtos, '#product-div')
+
+        const whatsappUrl = whatsappLinkGenerator(
+            phoneNumber,
+            productTitle,
+            productQuantity,
+            buyerName,
+            buyerAddress,
+            buyerPayment
+        )
+
+        window.open(whatsappUrl)
+
+        form.reset()
+        document.querySelector('.modal').classList.add('hide')
     })
 }
 /* função java para busca de pratos*/
@@ -64,15 +95,24 @@ const loadSearch = (form, productsDivId) => {
 
             results.forEach(produto => {
 
+                const esgotado = produto.estoque === 0
+                
                 const html = `
-                        <article class="prato">
-                            <img src="${produto.image}" alt="${produto.title}">
-                            <h4>${produto.title}</h4>
-                            <h4>${produto.value}</h4>
-                            <p>${produto.description}</p>
-                            <button type="button" onclick="modalFunc(${produto.id})">Quero este prato</button>
-                        </article>
-                    `
+                    <article class="prato ${esgotado ? 'esgotado' : ''}">
+                        ${esgotado ? '<span class="tag">ESGOTADO</span>' : ''}
+                        <img src="${produto.image}" alt="${produto.title}">
+                        <h4>${produto.title}</h4>
+                        <h4>R$: ${produto.value.toFixed(2)}</h4>
+                        <p>${produto.description}</p>
+                        <button 
+                            type="button" 
+                            onclick="modalFunc(${produto.id})"
+                            ${esgotado ? 'disabled' : ''}
+                        >
+                            ${esgotado ? 'Indisponível' : 'Quero este prato'}
+                        </button>
+                    </article>
+                `
                 productsDiv.insertAdjacentHTML('beforeend', html)
             })
 
