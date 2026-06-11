@@ -19,7 +19,7 @@ const produtos = [
         id: 3,
         image: 'Img/IMG-20260609-WA0032.jpg',
         title: 'Kit com 4 Doces',
-        description: 'Sabores: Brigadeiro, Beijinho, Doce de leite, Churros ou Surpresa de uva.',
+        description: 'Sabores: Brigadeiro, Beijinho, Bem-casado, Churros, Ninho com nutella ou Surpresa de uva.',
         value: 12.00,
         estoque: 8
     },
