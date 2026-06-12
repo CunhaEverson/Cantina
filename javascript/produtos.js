@@ -5,7 +5,7 @@ const produtos = [
         title: 'Pão Recheado',
         description: 'Pão com recheio de frango, requijão e orégano.',
         value: 10.00,
-        estoque: 8
+        estoque: 0
     },
     {
         id: 2,
