@@ -3,7 +3,7 @@ const produtos = [
         id: 1,
         image: 'Img/exemplo1.png',
         title: 'Pão Recheado',
-        description: 'Pão com recheio de frango, requijão e orégano.',
+        description: 'Sabores: frango ou calabresa, com requijão e orégano.',
         value: 10.00,
         estoque: 0
     },
