@@ -4,8 +4,8 @@ const produtos = [
         image: 'Img/exemplo1.png',
         title: 'Pão Recheado',
         description: 'Pão com recheio de frango, requijão e orégano.',
-        value: 8.00,
-        estoque: 0
+        value: 10.00,
+        estoque: 8
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ const produtos = [
         title: 'Kit com 4 Doces',
         description: 'Sabores: Brigadeiro, Beijinho, Bem-casado, Churros, Ninho com nutella ou Surpresa de uva.',
         value: 12.00,
-        estoque: 8
+        estoque: 5
     },
     {
         id: 4,
