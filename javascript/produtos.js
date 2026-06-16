@@ -21,7 +21,7 @@ const produtos = [
         title: 'Kit com 4 Doces',
         description: 'Sabores: Brigadeiro, Beijinho, Bem-casado, Churros, Ninho com nutella ou Surpresa de uva.',
         value: 12.00,
-        estoque: 0
+        estoque: 10
     },
     {
         id: 4,
