@@ -5,7 +5,7 @@ const produtos = [
         title: 'Pão Recheado',
         description: 'Sabores: frango ou calabresa, com requijão e orégano.',
         value: 10.00,
-        estoque: 10
+        estoque: 0
     },
     {
         id: 2,
@@ -29,7 +29,7 @@ const produtos = [
         title: 'Coxinha',
         description: 'Sabores: Frango e Charque.',
         value: 6.00,
-        estoque: 5
+        estoque: 0
     },
 
 ]
