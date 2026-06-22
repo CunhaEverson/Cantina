@@ -5,7 +5,7 @@ const produtos = [
         title: 'Pão Recheado',
         description: 'Sabores: frango ou calabresa, com requijão e orégano.',
         value: 10.00,
-        estoque: 10
+        estoque: 0
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ const produtos = [
         title: 'Empada',
         description: 'Recheadas nos sabores de frango e camarão, com creme de requeijão.\n A Empada de Camarão é R$: 10,00',
         value: 8.00,
-        estoque: 10
+        estoque: 0
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ const produtos = [
         title: 'Kit com 4 Doces',
         description: 'Sabores: Brigadeiro, Beijinho, Bem-casado, Churros, Ninho com nutella ou Surpresa de uva.',
         value: 12.00,
-        estoque: 8
+        estoque: 0
     },
     {
         id: 4,
