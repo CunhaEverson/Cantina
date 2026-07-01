@@ -5,7 +5,7 @@ const produtos = [
         title: 'Pão Recheado',
         description: 'Sabores: frango ou calabresa, com requijão e orégano.',
         value: 10.00,
-        estoque: 0
+        estoque: 10
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ const produtos = [
         title: 'Kit com 4 Doces',
         description: 'Sabores: Brigadeiro, Beijinho, Bem-casado, Churros, Ninho com nutella ou Surpresa de uva.',
         value: 12.00,
-        estoque: 0
+        estoque: 10
     },
     {
         id: 4,
