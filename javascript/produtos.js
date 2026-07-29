@@ -29,7 +29,7 @@ const produtos = [
         title: 'Coxinha',
         description: 'Sabores: Frango e Charque.',
         value: 6.00,
-        estoque: 10
+        estoque: 0
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ const produtos = [
         title: 'Tortinha de leite condensado',
         description: 'Sabor: Leite condensado.',
         value: 6.00,
-        estoque: 1
+        estoque: 3
     },
     {
         id: 6,
@@ -45,7 +45,7 @@ const produtos = [
         title: 'Tortinha de limão',
         description: 'Sabor: Limão.',
         value: 6.00,
-        estoque: 1
+        estoque: 3
     },
 
 ]
