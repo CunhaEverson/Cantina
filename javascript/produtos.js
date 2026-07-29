@@ -11,7 +11,7 @@ const produtos = [
         id: 2,
         image: 'Img/exemplo2.png',
         title: 'Empada',
-        description: 'Recheadas nos sabores de frango e camarão, com creme de requeijão.\n A Empada de Camarão é R$: 10,00',
+        description: 'Recheadas nos sabores de frango e camarão, com creme de requeijão.\n A Empada de Camarão é R$: 10,00.',
         value: 8.00,
         estoque: 15
     },
@@ -30,6 +30,22 @@ const produtos = [
         description: 'Sabores: Frango e Charque.',
         value: 6.00,
         estoque: 0
+    },
+    {
+        id: 5,
+        image: 'Img/IMG-20260728-WA0000.jpg',
+        title: 'Tortinha de leite condensado',
+        description: 'Sabor: Leite condensado.',
+        value: 6.00,
+        estoque: 1
+    },
+    {
+        id: 6,
+        image: 'Img/IMG-20260728-WA0001.jpg',
+        title: 'Tortinha de limão',
+        description: 'Sabor: Limão.',
+        value: 6.00,
+        estoque: 1
     },
 
 ]
