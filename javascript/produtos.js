@@ -35,7 +35,7 @@ const produtos = [
         id: 5,
         image: 'Img/IMG-20260728-WA0000.jpg',
         title: 'Tortinha de leite condensado',
-        description: 'Sabor: Leite condensado.',
+        description: '',
         value: 6.00,
         estoque: 3
     },
@@ -43,7 +43,7 @@ const produtos = [
         id: 6,
         image: 'Img/IMG-20260728-WA0001.jpg',
         title: 'Tortinha de limão',
-        description: 'Sabor: Limão.',
+        description: '',
         value: 6.00,
         estoque: 3
     },
