@@ -29,7 +29,7 @@ const produtos = [
         title: 'Coxinha',
         description: 'Sabores: Frango e Charque.',
         value: 6.00,
-        estoque: 10
+        estoque: 0
     },
     {
         id: 5,
