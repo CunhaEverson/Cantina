@@ -5,7 +5,7 @@ const produtos = [
         title: 'Pão Recheado',
         description: 'Sabores: frango ou calabresa, com requijão e orégano.',
         value: 10.00,
-        estoque: 10
+        estoque: 0
     },
     {
         id: 2,
@@ -37,7 +37,7 @@ const produtos = [
         title: 'Tortinha de leite condensado',
         description: '',
         value: 6.00,
-        estoque: 10
+        estoque: 0
     },
     {
         id: 6,
